@@ -1,0 +1,32 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CLIENTS.
+      * DIVISÕES DE UM PROGRAMA COBOL
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+
+            
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  WRK-NAME    PICTURE X(20)       VALUE SPACES.
+       01  WRK-BALANCE PICTURE S9(10)      COMP VALUE ZEROS.
+       01  WRK-BALANCE-ED  PICTURE Z.ZZZ.ZZZ.ZZ9,99.
+      *     O Z INDICA QUE CASO SEJA 0 O VALOR, OMITI-LO
+       
+
+       PROCEDURE DIVISION.
+           
+           DISPLAY "ENTER YOUR NAME: "
+                 ACCEPT WRK-NAME.
+           DISPLAY "ENTER YOUR BALANCE: "
+                 ACCEPT WRK-BALANCE.
+
+           DISPLAY WRK-NAME. 
+           DISPLAY WRK-BALANCE = WRK-BALANCE * 2 
+            
+                 MOVE WRK-BALANCE TO WRK-BALANCE-ED.
+           DISPLAY "BALANCE: " WRK-BALANCE-ED  
+                 
+           STOP RUN.
+           
