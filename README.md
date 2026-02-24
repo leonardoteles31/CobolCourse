@@ -41,3 +41,11 @@ Divisões de um programa cobol
     •   Toda lógica de progamação é escrita nessa divisão
 
 
+Variáveis
+    •   Quando for declarar uma variável, ela deve ter um tipo e eles podem ser:
+        •   Alfabético, representado por A
+        •   Numérico, representado por 9
+        •   Alfanumérico, representado por X
+    •   O uso de S antes do tipo permite armazenar o sinal negativo.
+    •   O uso do V logo após o numero de caracteres numéricos declara quantas casas decimais o número terá.
+    
