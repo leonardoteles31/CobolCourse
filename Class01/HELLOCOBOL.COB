@@ -1,0 +1,7 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLOCOBOL.
+      * COMENTARIO
+       PROCEDURE DIVISION.
+           DISPLAY "HELLO COBOL".
+           STOP RUN.
+           
