@@ -12,3 +12,32 @@ o	“-” indica que a linha será de continuação
 •	Coluna 08 a 11(Área A) – Reservada para indicar estruturas do programas como Divisões, Seções, Parágrasfos, níveis de variáveis elementares..
 •	Colunas 12 a 72 (Área B) – Usada para variáveis complementares, comandos e parte lógica do programa.
 •	Colunas 73 a 80 – Usada pelo compilador para identificação e controle do programa.
+
+Divisões de um programa cobol
+•   IDENTIFICATION DIVISION.
+    •   Responsável por documentar o programa fonte.
+    •   PROGRAM-ID é o único item obrigatório dessa divisão.
+    •   Mas informações como autor, empresa, data de criação e descrição do objetivo do programa são padrões mínimos de documentação
+
+•   DATA DIVISION.
+    •   Responsável por descrever a estrutura lógica dos arquivos e das áreas de trabalho, conhecidas como variáveis.
+    •   Define os dados que o programa aceitará como entrada e os que serão produzidos como saída.
+    •   Principais seções:
+        •   WORKING-STORAGE SECTION.
+        •   FILE SECTION.
+        •   LINKAGE SECTION.
+
+•   ENVIRONMENT DIVISION.
+    •   Responsável por descrever o ambiente físico em que será processado o programa.
+    •   Especifica os arquivos do programa e seus locais, formatos de entrada/saída dos dados.
+    •   Algumas das seções utilizadas:
+        •   Configuration Section
+            •   SPECIAL-NAMES DECIMAL-POINT IS COMMA:
+        •   Input-Output Section.
+            •   SELECT ARQUIVO ASSIGN TO
+
+•   PROCEDURE DIVISION.
+    •   Responsável por descrever todos os procedimentos a serem executados pelo programa, tais como operações e manipulação de dados.
+    •   Toda lógica de progamação é escrita nessa divisão
+
+
