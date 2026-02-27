@@ -74,4 +74,20 @@ Fluxos e Condições lógicas
         •   AND - OR - NOT
         •   Colocar parenteses quando for AND ou OR para que priorize a execução.
 
+Estruturando Programas e repetições:
+    •   Uma boa prática no mercado é sempre que você tem uma seção, finalizar ela
+        •   Ex: "00100-PRINCIPAL SECTION." no começo e no final "00100-END EXIT." da seção.
+    •   Separar em 4 seções:
+        •   PRINCIPAL, INICIAR, PROCESSAR E FINALIZAR.
+        •   A seção PRINCIPAL vai conter o STOP RUN. e vai ser responsável por chamar as outras seções usando o método PERFORM NOME-DA-SEÇÃO.
+    •   O PERFORM tem 3 variações:
+        •   INLINE:
+            •   Você não precisa criar um nome, o código já está dentro do perform, ele começando com PERFORM e terminando com END-PERFORM
+            •   Muito usado em repetições utilizando o PERFORM * TIMES.
+        •   UNTIL:
+            •   Ele vai executar o código até alguma coisa acontecer. Muito parecido com o while de outras linguagens.
+        •   VARYING:
+            •   Tem um inicio um meio e um fim. Muito parecido com o for de outras linguagens.
+
+***criar um contador de validos***
           

@@ -1,29 +1,44 @@
-       IDENTIFICATION DIVISION.
+       IDENTIFICATION          DIVISION.
        PROGRAM-ID. CLIENTS.
       * DIVISÕES DE UM PROGRAMA COBOL
-       ENVIRONMENT DIVISION.
-       CONFIGURATION SECTION.
+       ENVIRONMENT             DIVISION.
+       CONFIGURATION           SECTION.
        SPECIAL-NAMES.
            DECIMAL-POINT IS COMMA.
 
             
-       DATA DIVISION.
+       DATA                    DIVISION.
        WORKING-STORAGE SECTION.
        01  WRK-NAME            PICTURE X(20)       VALUE SPACES.
        01  WRK-BALANCE         PICTURE S9(10)      COMP VALUE ZEROS.
        01  WRK-BALANCE-ED      PICTURE Z.ZZZ.ZZZ.ZZ9,99.
        01  WRK-ACCOUNT-TYPE    PICTURE 9.
+       01  WRK-COUNTER         PICTURE 9(03) USAGE COMP.
+
       *     O Z INDICA QUE CASO SEJA 0 O VALOR, OMITI-LO
 
-       PROCEDURE DIVISION.
-           
+       PROCEDURE               DIVISION.
+       0100-PRINCIPAL         SECTION.
+           PERFORM 0200-START.
+           PERFORM 0300-PROCESS VARYING WRK-COUNTER FROM 0 BY 1
+                                UNTIL WRK-ACCOUNT-TYPE EQUAL 9.
+           PERFORM 0400-FINISH.      
+           STOP RUN.  
+             
+       0100-END. EXIT. 
+
+      *------------------------ START
+       0200-START       SECTION.
            DISPLAY "ENTER YOUR NAME: ".
                  ACCEPT WRK-NAME.
            DISPLAY "ENTER YOUR BALANCE: ".
                  ACCEPT WRK-BALANCE.
-           DISPLAY "ENTER YOUR ACCOUNT TYPE(1-CPF 2-CNPJ) ? ".
+           DISPLAY "ENTER YOUR ACCOUNT TYPE(1-CPF 2-CNPJ 9-SAIR) ? ".
                  ACCEPT WRK-ACCOUNT-TYPE.
-
+           DISPLAY "----------------------------------------------".    
+       0200-END. EXIT.
+      *------------------------ PROCESS 
+       0300-PROCESS            SECTION.
            IF WRK-BALANCE GREATER THAN OR EQUAL 5000 AND
               (WRK-ACCOUNT-TYPE EQUAL 1 OR WRK-ACCOUNT-TYPE EQUAL 2)
                    
@@ -49,7 +64,14 @@
                                DISPLAY "THIS ACCOUNT TYPE DOES NOT"
                                "EXIST!"
                    END-EVALUATE     
-           END-IF.  
-                 
-           STOP RUN.
+           END-IF.
+
+           PERFORM 0200-START. 
+       0300-END. EXIT.
+      *------------------------ FINISH
+       0400-FINISH             SECTION.
+           DISPLAY "---------------------------".
+           DISPLAY " ------- STATISTIC ------- ".
+           DISPLAY "CUSTOMERS READ: " WRK-COUNTER.
+       0400-END. EXIT.      
            
