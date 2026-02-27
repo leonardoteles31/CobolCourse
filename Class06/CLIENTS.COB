@@ -23,7 +23,7 @@
                  ACCEPT WRK-BALANCE.
 
            DISPLAY WRK-NAME. 
-           DISPLAY WRK-BALANCE = WRK-BALANCE * 2 
+           COMPUTE WRK-BALANCE = WRK-BALANCE * 2 
             
                  MOVE WRK-BALANCE TO WRK-BALANCE-ED.
            DISPLAY "BALANCE: " WRK-BALANCE-ED  

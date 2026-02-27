@@ -1,5 +1,9 @@
 Cobol
 
+Esse repositório tem como objetivo guardar todo o aprendizado da linguagem cobol no curso da alura. Cada Aula complementa a outra e o código ganha forma com o passar do curso. Na última aula teremos o código completo com tudo o que foi aprendido e colocado em prática.
+
+Esse README mostra tudo que aprendi sobre o cobol.
+
 Estrutura de um programa cobol
 
 •	O cobol foi desenvolvido na era dos primeiros mainframes, que dispunham como dispositivos de entrada e saída perfuradores e leitoras de cartões compostos de 12 linhas e 80 colunas.
@@ -48,4 +52,26 @@ Variáveis
         •   Alfanumérico, representado por X
     •   O uso de S antes do tipo permite armazenar o sinal negativo.
     •   O uso do V logo após o numero de caracteres numéricos declara quantas casas decimais o número terá.
-    
+
+Fluxos e Condições lógicas
+    •   Para declarar condições em um bloco if você utiliza:
+        •   Igual a = IS EQUAL TO ou EQUALS
+        •   Maior que = IS GREATER THAN
+        •   Menor que = IS LESS THAN
+        •   Maior ou igual = IS GREATER THAN OR EQUAL TO
+        •   Menor ou igual = IS LESS THAN OR EQUAL TO
+        •   Diferente de = IS NOT EQUAL TO
+        •   Para inverter a lógica usa o NOT antes de qualquer uma dessas palavras.
+    •   Condições especiais:
+        •   IS NUMERIC / IS ALPHABETIC : VERIFICA O TIPO DE DADO.
+        •   IS POSITIVE / IS NEGATIVE / IS ZERO : VERIFICA O ESTADO DO NUMERO.
+        •
+    •   Condições com EVALUATE:
+        •   Serve para comparar valores, escolher um caminho, deixar o código
+        mais organizado, substituir vários IFs.
+        •   EVALUATE TRUE significa que qualquer dos dois when que sirva ele vai ser executado.
+    •   Operações lógicas:
+        •   AND - OR - NOT
+        •   Colocar parenteses quando for AND ou OR para que priorize a execução.
+
+          
